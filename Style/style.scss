@@ -1,0 +1,107 @@
+@import './components/variaveis';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: $cor-de-fundo;
+    font-family: $fonte;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    
+
+    h1 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: .625rem;
+
+    .centro {
+        margin-top: .625rem;
+        text-align: center;
+        background: $cor-de-fundo-botoes;
+        color: $branco;
+        border-radius: 50%;
+        padding: 5px 10px;
+    }
+}
+
+figure {
+
+    img {
+        width: 200px;
+    }
+}
+
+#btnSortear {
+    color: $branco;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background: $cor-de-fundo-sortear;
+    cursor: pointer;
+    
+
+    &:hover {
+        background: $hover-sortear;
+        color: $preto;
+        transition: .3s;
+    }
+}
+
+/* Animação do Dado */
+@keyframes mover {
+    0% {
+        transform: translateY(0px); // Mover no eixo Y Vertical
+        transform: rotate(45deg); // Rotacionar em 90 graus
+        opacity: 0; // Opacidade 0 = 100% transparente
+    }
+    50% {
+        transform: scale(50%); // Muda o tamanho para o valor escrito (50%)
+    }
+    100% {
+        transform: translateY(-15px); //Mover no eixo Y Vertical
+        transform: rotate(-45deg); //Rotaciona em 90 graus
+        opacity: 1; // Opacidade 1 = 0% transparente
+    }
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 0; //Opacidade 0 = 100% transparente
+    }
+    from {
+        opacity: 1; //Opacidade 1 = 0% transparente
+    }
+}
+
+.animar {
+    animation: mover .5s infinite alternate;
+    /*
+    animation: mover 0.5s infinite alternate;
+    animation: mover 0.5s linear infinte;
+    animation-interation-count: infinite;
+    animation-direction: alternate;
+    */
+}
